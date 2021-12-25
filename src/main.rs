@@ -71,9 +71,16 @@ fn main() {
   === */
 
   let str1 = String::from("Unix");
-  let str2 = str1.clone();
+  let str2 = str1.clone(); // heap data gets copied
 
+  // refer: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
   println!("str1 = {}, str2 = {}", str1, str2);
+  // stack based variables
+
+  let x = 5;
+  let y = x; // we do not have to use clone here, since it is integer, known size at compile time and stored entirely on stack
+  // so difference here between shallow and deep copying here
+
 
 }
 
